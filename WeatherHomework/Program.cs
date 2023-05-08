@@ -11,9 +11,13 @@ namespace WeatherHomework
         static void Main(string[] args)
         {
             WeatherManager manager = new WeatherManager();
-            double temperature = manager.getWeather("Warsaw", "F");
+            Console.WriteLine("Insert the city you want to check the temperature: ");
+            string city = Console.ReadLine();
+            Console.WriteLine("Insert unit of the temperature (C, F, K): ");
+            string unit = Console.ReadLine();
+            double temperature = manager.getWeather(city, unit);
 
-            Console.WriteLine(temperature);
+            Console.WriteLine($"The temperature for the {city} is {temperature}{unit}");
 
             Console.ReadKey();
         }
