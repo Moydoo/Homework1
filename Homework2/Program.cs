@@ -10,12 +10,6 @@ namespace Homework2
     {
         static void Main(string[] args)
         {
-            //what is var?
-            string a = "john";
-            int b = 4;
-            var c = "john";
-
-            //once assinged the type can't be changed
         }
     }
 }

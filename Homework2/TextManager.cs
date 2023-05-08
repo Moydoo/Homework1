@@ -12,6 +12,9 @@ namespace Homework2
         {
 
             string[] words = sentence.Split(' ');
+            if (sentence.Length < 1 || words.Length < 1)
+                throw new Exception("Your sentence is too short");
+
             string currentLongest = string.Empty;
 
             foreach (string word in words)
@@ -34,7 +37,7 @@ namespace Homework2
             var foundWords = new List<string>();
             foreach (var word in sentence.Split(' '))
             {
-                if(word.Length == length)
+                if (word.Length == length)
                     foundWords.Add(word);
 
             }

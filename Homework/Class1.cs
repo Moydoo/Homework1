@@ -17,17 +17,13 @@ namespace Homework
 
         public string GetLongestWord()
         {
-            if (string.IsNullOrWhiteSpace(sentence))
-            {
-                throw new ArgumentException("Input sentence cannot be null or empty.");
-            }
+
 
             string[] words = sentence.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (words.Length == 0)
-            {
-                throw new ArgumentException("Input sentence does not contain any words.");
-            }
+            if (sentence.Length < 1 || words.Length < 1)
+                throw new Exception("Your sentence is too short");
+
 
             string longestWord = words.OrderByDescending(w => w.Length).First();
             return longestWord;
@@ -37,14 +33,14 @@ namespace Homework
         {
             if (string.IsNullOrWhiteSpace(sentence))
             {
-                throw new ArgumentException("Input sentence cannot be null or empty.");
+                throw new Exception("Input sentence cannot be null or empty.");
             }
 
             string[] words = sentence.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             if (words.Length == 0)
             {
-                throw new ArgumentException("Input sentence does not contain any words.");
+                throw new Exception("Input sentence does not contain any words.");
             }
 
             int maxLength = words.Max(w => w.Length);
