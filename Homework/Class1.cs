@@ -8,6 +8,8 @@ namespace Homework
 {
     public class TextManager
     {
+
+        //we can create a private variable that we can access through our Class but not exploit it outside
         private string sentence;
 
         public void LoadSentence(string input)
@@ -15,6 +17,7 @@ namespace Homework
             sentence = input;
         }
 
+        //we can not assign the arguments in our Method and then use it as a function .functionName();
         public string GetLongestWord()
         {
 
@@ -24,7 +27,7 @@ namespace Homework
             if (sentence.Length < 1 || words.Length < 1)
                 throw new Exception("Your sentence is too short");
 
-
+            //is it working like in JS's arrow functions?
             string longestWord = words.OrderByDescending(w => w.Length).First();
             return longestWord;
         }
